@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', # Django REST Framework
     'corsheaders', # Django CORS Headers
+    'hrm_demo' # Our HRM Demo app
 ]
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
