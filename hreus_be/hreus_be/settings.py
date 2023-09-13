@@ -1,10 +1,8 @@
 from pathlib import Path
 
-skf = open('../SECRET_KEY', 'r') # Read SECRET_KEY from file
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = skf.read().strip()
+SECRET_KEY = 'django-insecure-kdrafc!jc7^x7bw8902p8fa9!z030r#56*7bihe^g)i5e(7rhc'
 
 DEBUG = True
 
