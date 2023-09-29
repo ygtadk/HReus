@@ -1,10 +1,15 @@
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 
-skf = open('../SECRET_KEY', 'r')
+skf = open('../SECRET_KEY', 'r+')
+
+#skf.write(get_random_secret_key())
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = skf.read().strip()
+
+#skf.close()
 
 DEBUG = True
 
@@ -32,10 +37,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'hreus_be.urls'
 
+TEMPLATES_DIR = BASE_DIR / 'templates'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,11 +81,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
 
 USE_TZ = True
+
+TIME_ZONE = 'UTC'
 
 STATIC_URL = 'static/'
 

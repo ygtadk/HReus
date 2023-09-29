@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- Material Web JS-->
+    <script src="{% static 'js/material-web.all.min.js' %}"></script>
+</head>
+<body>
+    <md-elevated-button>Elevated</md-elevated-button>
+    <md-filled-button>Filled</md-filled-button>
+      <span style="position: relative">
+        <md-filled-button id="theming-anchor">Themed menu</md-filled-button>
+        <md-menu id="theming-menu" anchor="theming-anchor">
+          <md-menu-item>
+            <div slot="headline">Apple</div>
+          </md-menu-item>
+          <md-menu-item>
+            <div slot="headline">Banana</div>
+          </md-menu-item>
+          <md-menu-item>
+            <div slot="headline">Cucumber</div>
+          </md-menu-item>
+        </md-menu>
+      </span>
+      <md-tabs>
+        <md-primary-tab>Video</md-primary-tab>
+        <md-primary-tab>Photos</md-primary-tab>
+        <md-primary-tab>Audio</md-primary-tab>
+      </md-tabs>
+      
+      <md-tabs>
+        <md-secondary-tab>Birds</md-secondary-tab>
+        <md-secondary-tab>Cats</md-secondary-tab>
+        <md-secondary-tab>Dogs</md-secondary-tab>
+      </md-tabs>
+      
+      <script type="module">
+        const anchorEl = document.body.querySelector("#theming-anchor");
+        const menuEl = document.body.querySelector("#theming-menu");
+      
+        anchorEl.addEventListener("click", () => {
+          menuEl.show();
+        });
+      </script>
+      
+</body>
+</html>
